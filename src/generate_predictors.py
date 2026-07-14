@@ -1,6 +1,6 @@
 import numpy as np
 
-def generate_predictors(global_config, local_config):
+def generate_predictors(x_config):
     """
     Generate predictor matrix X.
 
@@ -18,19 +18,16 @@ def generate_predictors(global_config, local_config):
     """
 
     # Read parameters
-    n = global_config["n"]
-    random_state = global_config["random_state"]
-    variable_type = local_config["variable_type"]
-    distribution = local_config["distribution"]
-    params = local_config["distribution_params"]
-    dimension = local_config["dimension"]
-
-    np.random.seed(random_state)
+    n = x_config["size"]
+    variable_type = x_config["variable_type"]
+    distribution = x_config["distribution"]
+    params = x_config["distribution_params"]
+    dimension = x_config["dimension"]
 
     # Normal Distribution
     if variable_type == "continuous" and distribution == "normal":
-        rng = np.random.default_rng(random_state)
-        X = rng.normal(
+        
+        X = np.random.normal(
             loc=params["mean"],
             scale=params["std"],
             size=(n, dimension))

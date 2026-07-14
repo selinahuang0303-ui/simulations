@@ -8,6 +8,7 @@ GLOBAL_CONFIG = {
 }
 
 X1_CONFIG = {
+    "size": 500,
     "dimension": 5,
     "variable_type": "continuous",
     "distribution": "normal",
@@ -21,7 +22,8 @@ X1_CONFIG = {
 }
 
 X2_CONFIG = {
-    "dimension": 500,
+    "size": 500,
+    "dimension": 5,
     "variable_type": "continuous",
     "distribution": "normal",
     "distribution_params": {
@@ -33,5 +35,10 @@ X2_CONFIG = {
     }
 }
 
-X1 = generate_predictors(GLOBAL_CONFIG, X1_CONFIG)
-X2 = generate_predictors(GLOBAL_CONFIG, X2_CONFIG)
+corr_CONFIG = {
+    "method": "spearman",
+    "strength": 0.5
+}
+
+X1 = generate_predictors(X1_CONFIG)
+X2 = generate_predictors(X2_CONFIG)
