@@ -19,7 +19,7 @@ Hyperparameter tuning is performed using cross-validation before model evaluatio
 .
 ├── README.md
 ├── research_log.md
-├── notebooks/
+├── experiments/
 │   ├── 01_linear_independent_x1.ipynb
 │   ├── 02_linear_independent_x2.ipynb
 │   └── test.ipynb
@@ -50,14 +50,9 @@ The response variable depends on approximately 60% of the high-dimensional predi
 
 ## Evaluation
 
-Model performance is evaluated using:
+Current experiments primarily evaluate model performance using Mean Squared Error (MSE). Each experiment is repeated across multiple randomly generated datasets, and average MSE is used to compare baseline methods.
 
-* Mean Squared Error (MSE)
-* Runtime
-* Selected variables for Lasso
-* Model-specific outputs such as feature importance and neural network convergence
-
-Experiments are repeated across multiple randomly generated datasets, and average MSE is used to compare model performance.
+Future evaluations will include additional metrics such as runtime, variable selection performance, and model-specific characteristics.
 
 ## Current Work
 
