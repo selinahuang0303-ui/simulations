@@ -7,7 +7,7 @@ def tune_random_forest(
     X_train,
     Y_train,
     param_grid,
-    cv=5
+    cv=3
 ):
     rf_model = RandomForestRegressor(
         random_state=42

@@ -104,3 +104,15 @@ Current functionality:
 ### Next Steps
 
 * Finish Experiment 02 and evaluate the results
+
+## 2026-07-14
+
+* Simplified the experiment workflow by adding a loop to tune all models
+* Completed Experiments 03 and 04
+
+### Next Steps
+
+* Run the remaining experiments
+* Improve and optimize the data generation process
+
+
