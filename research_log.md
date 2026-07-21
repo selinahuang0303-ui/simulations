@@ -115,4 +115,54 @@ Current functionality:
 * Run the remaining experiments
 * Improve and optimize the data generation process
 
+## 2026-07-18
+
+* Explored the MIMIC-III sepsis dataset to identify the coding of binary variables.
+* Implemented and evaluated Logistic Lasso and Logistic Ridge on the MIMIC-III dataset.
+* Added an `evaluate_classifier` function to standardize the evaluation of classification models.
+
+### Next Steps
+
+* Implement and evaluate a Random Forest classifier on the MIMIC-III dataset.
+
+## 2026-07-19
+
+* Implemented and evaluated Random Forest and Neural Network classifiers on the MIMIC-III dataset.
+* Completed hyperparameter tuning for the Neural Network and selected the final model.
+* Began running repeated train/test split experiments (replicates) for all models to evaluate performance stability.
+
+### Next Steps
+
+* Complete the replicate experiments for all models.
+* Summarize results by computing the mean and standard deviation of the evaluation metrics.
+* Compare model performance using tables and visualizations.
+
+## 2026-07-20
+
+* finished replicate experiments
+* created summary tables and bar graphs to evaluate results
+
+### Next Steps
+
+1. Interpret the experimental results
+   * explain why each model performed differently
+   * identify strengths and limitations of each model
+
+2. Compare with previous work
+   * review studies using the MIMIC-III dataset
+   * compare evaluation metrics and modeling approaches
+
+3. Connect the findings to the overall project
+   * discuss what these baseline results imply for causal inference methods
+   * identify directions for future improvements
+
+## 2026-07-21
+
+* completed interpretation and comparison of the four baseline models
+* analyzed model coefficients and feature importance
+* learned about Sepsis-3, causal inference, and treatment decision-making
+* updated project documentation
+
+
+
 

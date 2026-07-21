@@ -1,38 +1,22 @@
 # Baseline Model Comparison
 
-This project compares the performance of baseline machine learning methods under different simulated high-dimensional data settings.
+This project compares baseline machine learning models using both simulated high-dimensional data and the MIMIC-III sepsis dataset. The goal is to evaluate predictive performance and compare model behavior.
 
 ## Models
 
-The baseline models include:
+The following baseline models are implemented and compared:
 
-* Lasso Regression
-* Ridge Regression
-* Random Forest
-* Neural Network
+- Lasso Regression
+- Ridge Regression
+- Random Forest
+- Neural Network
 
-Hyperparameter tuning is performed using cross-validation before model evaluation.
+Hyperparameters are tuned using cross-validation before final model evaluation.
 
-## Project Structure
 
-```text
-.
-├── README.md
-├── research_log.md
-├── experiments/
-│   ├── 01_linear_independent_x1.ipynb
-│   ├── 02_linear_independent_x2.ipynb
-│   └── test.ipynb
-└── src/
-    ├── correlation.py
-    ├── experiment.py
-    ├── generate_predictors.py
-    └── models/
-        ├── lasso.py
-        ├── ridge.py
-        ├── random_forest.py
-        └── neural_network.py
-```
+## Simulation Study
+
+The simulation study evaluates model performance under progressively more challenging data-generating settings.
 
 ## Research Plan
 
@@ -88,16 +72,32 @@ This experiment uses the same sparse signal setting as Experiment 01, with moder
 
 **Result:** Overall model performance was similar to Experiment 01, suggesting that moderate correlation did not substantially affect model performance in the current setting. Different levels of correlation may lead to different results and should be investigated in future experiments.
 
+## MIMIC-III Sepsis Study
 
-## Evaluation
+The baseline models were further evaluated on the MIMIC-III sepsis dataset to predict 90-day mortality.
 
-Current experiments primarily evaluate model performance using Mean Squared Error (MSE). Each experiment is repeated across multiple randomly generated datasets, and average MSE is used to compare baseline methods.
+### Evaluation Metrics
 
-Future evaluations will include additional metrics such as runtime, variable selection performance, and model-specific characteristics.
+Models were evaluated using:
 
-## Current Work
+- Accuracy
+- AUC
+- Precision
+- Recall
+- F1-score
+- Runtime
 
-* Expanding simulation settings
-* Comparing baseline methods under different data-generating processes
-* Improving the experiment and evaluation workflow
+Hyperparameter tuning was performed using cross-validation.
+
+### Feature Importance
+
+Feature importance was analyzed using:
+
+- Model coefficients for Lasso and Ridge
+- Feature importance for Random Forest
+- Permutation importance for the Neural Network
+
+Across models, age and several indicators of disease severity (e.g., Shock Index, SOFA score, and BUN) consistently ranked among the most important predictors.
+
+
 
